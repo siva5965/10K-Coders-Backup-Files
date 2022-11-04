@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Hello From HTML</h2>
+    <script>
+        var person = {
+            Myname : "Siva",
+            email:"siva@gamil.com",
+            mobile:9876543210,
+            
+        };
+        person.college="abc"
+        person.idno=9876
+
+        person ['city'] = "bangalore"
+        person ['language']="Telugu"
+        
+        
+        document.write(person.Myname+"<br>")
+        document.write(person.email+"<br>"+person.mobile+"<br>")
+
+        document.write("my Name : "+person.Myname +"<br> Email : "+person.email+"<br> Mobile : "+person.mobile+"<br>College : "+person.college)
+
+        // for(a in person){
+        //     console.log(a)
+        // }
+        console.log(person)
+
+        var car1= {
+            Name : "Ford",
+            Model : "Figo",
+            Year : 2012
+        }
+        console.log(car1)
+
+        var car2={}
+        car2.Name="Suzuki"
+        car2.Model="Swift"
+        car2.Year=2015
+
+        console.log(car2)
+
+        var Phone={}
+        Phone['First Phone']="Asus zenfone max"
+        Phone['Second Phone']='Asus zenfone max pro m1'
+        Phone['Third Phone']="One Plus Nord"
+        console.log(Phone)
+
+        var Bike={}
+            Bike['FirstBike'] ="Glamour"
+            Bike['SecondBike'] ="Pulsar"
+            Bike['ThirdBike'] ="Royal Enfield"
+            Bike['ForthBike'] ="Yamaha Rx100"
+            Bike['FifthBike'] ="Jawa"
+
+        console.log(Bike)
+
+        var Course={}
+        Course.no1="HTML"
+        Course.no2="CSS"
+        Course.no3="JAVASCRIPT"
+        Course.no4="REACT"
+
+        console.log(Course)
+
+        
+    </script>
+    
+</body>
+</html>
