@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Literal Way</h1>
+    <script>
+        var person1= {
+            myname:"siva",
+            city:"rajahmundry",
+        }
+        person1.phone=9087654321;
+        person1['email']="siva@gmail.com";
+        // console.log(person1)
+
+        for(a in person1){
+            console.log(a + " : "+person1[a])
+            document.write(a + " : " + person1[a]+"<br>")
+        }
+    </script>
+    <h1>OOP Way</h1>
+    <script>
+        var student= new Object({name:"kalyan",number:471})
+        // console.log(student)
+        for(s in student){
+            console.log(s + " : "+student[s])
+            document.write(s + " : "+student[s]+ "<br>")
+        }
+    </script>
+    <h1>Constructor Function</h1>
+    <script>
+        function car(carcompany,model,year){
+            this.carcompany=carcompany;
+            this.model=model;
+            this.year=year;
+        }
+        var car1=new car("Ford","Figo",2012)
+        var car2=new car("suzuki","Swift",2015)
+        for(c in car1){
+            console.log(c+" : "+car1[c])
+            document.write(c+" : "+car1[c]+"<br>")
+        }
+        
+        for(d in car2){
+            console.log(d+" : "+car2[d])
+            document.write(d+" : "+car2[d]+"<br>")
+        }
+        // console.log(car1)
+        // console.log(car2)
+        
+    </script>
+    <h1>Class</h1>
+    <script>
+        class User{
+            constructor(Phonecompany,model){
+            this.Phonecompany=Phonecompany
+            this.model=model
+            }
+        }
+        var phone1= new User("Asus","Zenfone Max")
+        var phone2= new User("Asus","Zenfone Max Pro M1")
+        var phone3= new User("One Plus","Nord")
+        // console.log (phone1)
+        // console.log (phone2)
+        // console.log (phone3)
+        for(p1 in phone1){
+            document.write(p1+" : "+phone1[p1]+"<br>")
+            console.log(p1+ " : "+phone1[p1])
+        }
+        for(p2 in phone2){
+            document.write(p2+" : "+phone2[p2]+"<br>")
+            console.log(p2+" : "+phone2[p2])
+        }
+        for(p3 in phone3){
+            document.write(p3+" : "+phone3[p3]+"<br>")
+            console.log(p3+" : "+phone3[p3])
+        }
+
+    </script>
+    
+</body>
+</html>

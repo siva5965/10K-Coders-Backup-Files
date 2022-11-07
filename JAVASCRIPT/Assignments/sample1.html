@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Literal Way
+
+        var person = {
+            fname: "siva",
+            lname: "kalyan",
+            fullname: function () {
+                console.log(this.fname + "" + this.lname)
+            }
+        }
+
+        console.log(person)
+        
+        // OOP Way
+        // Built In Way
+
+        var student = new Object({ fname: "siva", lname: "kalyan" })
+
+        console.log(student)
+        // Constructor Function
+
+        function Employee(email, mobile) {
+            this.email= email;
+            this.mobile=mobile;
+        }
+
+        var emp1 = new Employee("siva@gmail.com", 9786646431)
+        console.log(emp1)
+
+
+        // Class
+
+        class User {
+            constructor(fullname, city) {
+                this.fullname=fullname;
+                this.city=city;
+            }
+        }
+
+        var user1 = new User("siva kalyan", "rajahmundry");
+
+        console.log(user1)
+    </script>
+</body>
+
+</html>
