@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var persons = ["siva","sai","dinesh","sasi","kalyan","shyam","krishna","kiran"]
+
+        var char4person = persons.find((personname)=>{
+            return personname.length ==4
+        })
+        
+
+        var char5person = persons.filter((personname) =>{
+            return personname.length == 5
+        })
+        
+        console.log(char4person)
+        console.log(char5person)
+    </script>
+</body>
+</html>
