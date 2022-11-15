@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table 5</title>
     <style>
-        table,tr,th {
+        table,tr,th,td{
             border: 2px solid black;
         }
     </style>
@@ -28,7 +28,7 @@
     </table>
 
     <script>
-        var allusers = [
+        var cart = [
             {
                 "id": 1,
                 "userId": 1,
@@ -143,17 +143,31 @@
             }
         ]
 
-        allusers.forEach((info)=>{
+        console.log(cart)
+
+        cart.forEach((info) => {
+            // console.log(info)
             var mytr = document.createElement("tr")
 
-            for(a in info){
-                var myth = document.createElement("th")
+            for (a in info) {
+                var mytd = document.createElement("td")
 
-                myth.innerHTML = info[a]
-                mytr.appendChild(myth)
-
-                if (a === "products") {
-                    myth.innerHTML = info[a]["productId"]+"  and  "+info[a]["quantity"]
+                if (a !== "products") {
+                    mytd.innerHTML = info[a]
+                    mytr.appendChild(mytd)
+                } else if (a == "products") {
+                    var producttable = document.createElement("table")
+                    info[a].forEach((item) => {
+                        var myptr = document.createElement("tr")
+                        for (c in item) {
+                            var ctd = document.createElement("td")
+                            ctd.innerHTML = c + " : " + item[c]
+                            myptr.appendChild(ctd)
+                        }
+                        producttable.appendChild(myptr)
+                    })
+                    mytd.appendChild(producttable)
+                    mytr.appendChild(mytd)
                 }
 
 
