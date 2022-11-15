@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table 1</title>
+    <style>
+        table,tr,th{
+            border: 2px solid black;
+        }
+    </style>
+    
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>fname</th>
+                <th>lname</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    
+    <script>
+
+        // for(i=0;i<10;i++){
+        //     var myheading = document.createElement("h1")
+        //     document.body.appendChild(myheading)
+        // }
+
+        var allUsers = [
+    {
+        "fname": "Byron",
+        "lname": "Ravenelle"
+    },
+    {
+        "fname": "Jenny",
+        "lname": "Comfort"
+    },
+    {
+        "fname": "Marjorie",
+        "lname": "Severson"
+    },
+    {
+        "fname": "Tania",
+        "lname": "Wing"
+    },
+    {
+        "fname": "Ericka",
+        "lname": "Hesler"
+    },
+    {
+        "fname": "Stacie",
+        "lname": "Kirshner"
+    },
+    {
+        "fname": "Joel",
+        "lname": "Rock"
+    },
+    {
+        "fname": "Aesha",
+        "lname": "Anastasiades"
+    },
+    {
+        "fname": "Kimberleigh",
+        "lname": "Dupont"
+    },
+    {
+        "fname": "Brad",
+        "lname": "Kimmel"
+    }
+    ]
+
+    // console.log(allUsers.length)
+
+    // allUsers.forEach((user)=>{
+    //     var myheading = document.createElement("h1")
+    //     myheading.innerHTML = user.fname+ " "+user.lname
+    //     document.body.appendChild(myheading)
+    // })
+
+        // allUsers.forEach((user)=>{
+        //     var myli = document.createElement("li")
+        //     myli.innerHTML = user.fname+" "+user.lname
+        //     document.querySelector("ul").appendChild(myli)
+        // })
+
+
+        allUsers.forEach((name)=>{
+            var mytr = document.createElement("tr")
+
+            //By Using for in Loop
+
+            // for(a in name){
+            //     var mytd = document.createElement("td")
+            //     mytd.innerHTML = name[a]
+            //     mytr.appendChild(mytd)
+            // }
+
+
+                Object.values(name).forEach((val)=>{
+                    var myth = document.createElement("th")
+                    myth.innerHTML = val
+                    mytr.appendChild(myth)
+                })
+
+
+            // var td1 = document.createElement("td")
+            // td1.innerHTML = name.fname
+            // mytr.appendChild(td1)
+
+            // var td2 = document.createElement("td")
+            // td2.innerHTML = name.lname
+            // mytr.appendChild(td2)
+            
+            document.querySelector("tbody").appendChild(mytr)
+        })
+
+    </script>
+</body>
+</html>

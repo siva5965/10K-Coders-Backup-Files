@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var teamindia=[
+        {
+            Name:"Virender Sehwag",
+            Runs: 0,
+            Fours: 0,
+            Sixes: 0,
+            SR: 1
+        },
+        {
+            Name:"Sachin Tendulkar",
+            Runs: 18,
+            Fours: 2,
+            Sixes: 0,
+            SR: 128.57
+        },
+        {
+            Name:"Gautam Gambhir",
+            Runs: 97,
+            Fours:9,
+            Sixes:0,
+            SR:79.51
+        },
+        {
+            Name:"Virat Kohli",
+            Runs: 35,
+            Fours: 4,
+            Sixes: 0,
+            SR: 71.43
+        },
+        {
+            Name:"MS Dhoni",
+            Runs: 91,
+            Fours: 8,
+            Sixes: 2,
+            SR: 115.19
+        },
+        {
+            Name:"Yuvraj Singh",
+            Runs: 21,
+            Fours: 2,
+            Sixes: 0,
+            SR: 87.50
+        }
+        ];
+
+
+        var totalscore = teamindia.reduce((intialValue,team)=>{
+            if(intialValue.Runs==0){
+                return intialValue.Runs+ team.Runs
+            }else{
+                return intialValue+ team.Runs
+            }
+        })
+
+        console.log("Total Runs by All Players :", totalscore)
+        document.write("Total Runs by All Players :", totalscore+"<br>")
+
+        var total4s = teamindia.reduce((initialvalue,team)=>{
+            if(initialvalue.Fours==0){
+                return initialvalue.Fours+ team.Fours
+            }else{
+                return initialvalue+ team.Fours
+            }
+        })
+
+        console.log("Total 4's by All Players :" , total4s)
+        document.write("Total 4's by All Players :" , total4s+"<br>")
+
+        var total6s = teamindia.reduce((initialvalue,team)=>{
+            if(initialvalue.Sixes==0){
+                return initialvalue.Sixes+ team.Sixes
+            }else{
+                return initialvalue+ team.Sixes
+            }
+        })
+
+        console.log("Total 6's by All Players :" , total6s)
+        document.write("Total 6's by All Players :" , total6s+"<br>")
+
+        var lowestruns = teamindia.filter((team)=>{
+            return team.Runs < 30;
+        })
+
+        console.log("lowet runs scored player :" ,lowestruns)
+        // document.write(lowestruns+"<br>")
+
+        var highestruns = teamindia.filter((team)=>{
+            return team.Runs > 30
+        })
+
+        console.log("highest runss scored player :",highestruns)
+
+        var lowestSR = teamindia.filter((team)=>{
+            return team.SR < 50
+        })
+
+        console.log("Lowest Strike Rate :",lowestSR)
+
+        var HighestSR = teamindia.filter((team)=>{
+            return team.SR > 50
+        })
+
+        console.log("Highest Strike Rate :",HighestSR)
+
+        
+
+
+
+    
+    </script>
+</body>
+</html>
