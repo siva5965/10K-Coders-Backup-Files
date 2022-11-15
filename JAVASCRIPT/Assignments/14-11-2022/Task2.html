@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table 2</title>
     <style>
-        table,tr,th{
+        table,tr,th,td{
             border: 2px solid black;
         }
     </style>
@@ -124,9 +124,9 @@
             var mytr = document.createElement("tr")
 
             for(a in info){
-                var myth = document.createElement("th")
-                myth.innerHTML = info[a]
-                mytr.appendChild(myth)
+                var mytd = document.createElement("td")
+                mytd.innerHTML = info[a]
+                mytr.appendChild(mytd)
             }
 
             document.querySelector("tbody").appendChild(mytr)

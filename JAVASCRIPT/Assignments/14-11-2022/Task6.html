@@ -9,7 +9,8 @@
     <style>
         table,
         tr,
-        th {
+        th,
+        td {
             border: 2px solid black;
         }
     </style>
@@ -19,25 +20,31 @@
     <table>
         <thead>
             <tr>
-                <th>address</th>
-                <!-- <th colspan="5">address</th> -->
-                <!-- <td>
-                    <th>geolocation</th>
-                    <td>lat</td>
-                    <td>long</td>
-                    <th>city</th>
-                    <th>street</th>
-                    <th>number</th>
-                    <th>zipcode</th>
-                </td> -->
-                <th>id</th>
-                <th>email</th>
-                <th>username</th>
-                <th>password</th>
-                <th>name</th>
-                <th>phone</th>
-                <th>__v</th>
-            </tr>    
+                <th colspan="6">address</th>
+                <th rowspan="3">id</th>
+                <th rowspan="3">email</th>
+                <th rowspan="3">username</th>
+                <th rowspan="3">password</th>
+                <th colspan="2">name</th>
+                <th rowspan="3">phone</th>
+                <th rowspan="3">__v</th>
+                
+                
+            </tr>
+            <tr>
+                <th colspan="2">geolocation</th>
+                <th rowspan="2">city</th>
+                <th rowspan="2">street</th>
+                <th rowspan="2">number</th>
+                <th rowspan="2">zipcode</th>
+                
+                <th rowspan="2">firstname</th>
+                <th rowspan="2">lastname</th>
+            </tr>
+            <tr>
+                <th>lat</th>
+                <th>long</th>
+            </tr>
         </thead>
         <tbody></tbody>
     </table>
@@ -267,18 +274,31 @@
         ]
 
         allusers.forEach((info)=>{
+            console.log(info)
             var mytr = document.createElement("tr")
 
             for(a in info){
-                var myth = document.createElement("th")
+                var mytd = document.createElement("td")
+                if(a !=="address" && a!=="name"){
+                    mytd.innerHTML = info[a]
+                    mytr.appendChild(mytd)
+                }else if (a == "address"){
+                    var myadd = document.createElement("add")
+                    mytd.appendChild(myadd)
+                    mytr.appendChild(mytd)
+                }
+                
 
-                myth.innerHTML = info[a]
-                mytr.appendChild(myth)
-
+                // if (a !=="address" && a !=="name"){
+                //     mytd.innerHTML = info[a]
+                //     mytr.appendChild(mytd)
+                // }
             }
 
             document.querySelector("tbody").appendChild(mytr)
         })
+
+
     </script>
 </body>
 
