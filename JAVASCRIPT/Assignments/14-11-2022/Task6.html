@@ -37,7 +37,7 @@
                 <th rowspan="2">street</th>
                 <th rowspan="2">number</th>
                 <th rowspan="2">zipcode</th>
-                
+
                 <th rowspan="2">firstname</th>
                 <th rowspan="2">lastname</th>
             </tr>
@@ -282,17 +282,31 @@
                 if(a !=="address" && a!=="name"){
                     mytd.innerHTML = info[a]
                     mytr.appendChild(mytd)
-                }else if (a == "address"){
-                    var myadd = document.createElement("add")
-                    mytd.appendChild(myadd)
-                    mytr.appendChild(mytd)
                 }
-                
+                else if (a == "address"){
+                    var add = info[a]
+                    for(b in add){
+                        var myadd = document.createElement("td")
+                        if(b !=="geolocation"){
+                            myadd.innerHTML = add[b]
+                            mytr.appendChild(myadd)
+                        }else if (b =="geolocation"){
+                            for(a in add[b]){
+                                var geo = document.createElement("td")
+                                geo.innerHTML = add[b][a]
+                                mytr.appendChild(geo)
+                            }
+                        }
+                    }
+                    
+                }else if (a == "name"){
+                    for (c in info[a]){
+                        var nam = document.createElement("td")
+                        nam.innerHTML = info[a][c]
+                        mytr.appendChild(nam)
+                    }
+                }
 
-                // if (a !=="address" && a !=="name"){
-                //     mytd.innerHTML = info[a]
-                //     mytr.appendChild(mytd)
-                // }
             }
 
             document.querySelector("tbody").appendChild(mytr)
