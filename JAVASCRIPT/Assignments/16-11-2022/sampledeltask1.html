@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Table 1</title>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 2px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>fname</th>
+                <th>lname</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+
+
+        var allusers = [
+            {
+                "fname": "Byron",
+                "lname": "Ravenelle"
+            },
+            {
+                "fname": "Jenny",
+                "lname": "Comfort"
+            },
+            {
+                "fname": "Marjorie",
+                "lname": "Severson"
+            },
+            {
+                "fname": "Tania",
+                "lname": "Wing"
+            },
+            {
+                "fname": "Ericka",
+                "lname": "Hesler"
+            },
+            {
+                "fname": "Stacie",
+                "lname": "Kirshner"
+            },
+            {
+                "fname": "Joel",
+                "lname": "Rock"
+            },
+            {
+                "fname": "Aesha",
+                "lname": "Anastasiades"
+            },
+            {
+                "fname": "Kimberleigh",
+                "lname": "Dupont"
+            },
+            {
+                "fname": "Brad",
+                "lname": "Kimmel"
+            }
+        ]
+
+        var filterallusers = []
+        function displayallusers(allusers) {
+            document.querySelector("tbody").innerHTML = ""
+
+            allusers.forEach((info, i) => {
+                console.log(info);
+                var mytr = document.createElement("tr")
+
+
+                for (a in info) {
+                    var mytd = document.createElement("td")
+                    mytd.innerHTML = info[a]
+                    mytr.appendChild(mytd)
+                }
+
+
+                var deltd = document.createElement("td")
+                var delbtn = document.createElement("button")
+                delbtn.setAttribute("onclick", "deleteinfo(" + i + ")")
+                delbtn.innerHTML = "DELETE"
+                deltd.appendChild(delbtn)
+                mytr.appendChild(deltd)
+
+
+                document.querySelector("tbody").appendChild(mytr)
+            })
+        }
+
+
+        function deleteinfo(i) {
+            if (filterallusers.length == 0) {
+                filterallusers = allusers.filter((info, index) => {
+                    return info.fname !== allusers[i].fname
+                })
+            } else {
+                filterallusers = filterallusers.filter((info, index) => {
+                    return info.fname !== filterallusers[i].fname
+                })
+            }
+
+            displayallusers(filterallusers)
+        }
+        displayallusers(allusers)
+        function edituser() { }
+
+
+    </script>
+</body>
+
+</html>

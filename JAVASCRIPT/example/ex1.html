@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+
+    </table>
+    <script>
+        var Mynames = [
+            {
+                "fname": "Jesse",
+                "lname": "Wittek"
+            },
+            {
+                "fname": "Josefina",
+                "lname": "Salter"
+            },
+            {
+                "fname": "Samantha",
+                "lname": "Fournier"
+            },
+            {
+                "fname": "Noby",
+                "lname": "Hoffmann"
+            },
+            {
+                "fname": "Arlyne",
+                "lname": "Comeau"
+            },
+            {
+                "fname": "Clarence",
+                "lname": "Fuller"
+            },
+            {
+                "fname": "Cherylynne",
+                "lname": "Atanasov"
+            },
+            {
+                "fname": "Sukanya",
+                "lname": "Cicero"
+            },
+            {
+                "fname": "Edith",
+                "lname": "Miyaki"
+            },
+            {
+                "fname": "Terrance",
+                "lname": "Gershowitz"
+            }
+        ]
+        var FilterMynames = [];
+        function displayMynames(Mynames) {
+            document.querySelector("tbody").innerHTML = "";
+            Mynames.forEach((user, i) => {
+
+                var trow = document.createElement("tr")
+
+                for (a in user) {
+                    var myTdata = document.createElement("td")
+                    myTdata.innerHTML = user[a]
+                    trow.appendChild(myTdata)
+
+                }
+                var editTd = document.createElement("td")
+                var editbtn = document.createElement("button");
+                editbtn.innerHTML = "Edit"
+                editTd.appendChild(editbtn)
+                trow.appendChild(editTd)
+
+                var Deltd = document.createElement("td")
+                var Delbtn = document.createElement("button");
+                Delbtn.setAttribute("Onclick", "DelteNames(" + i + ")")
+                Delbtn.innerHTML = "Delete"
+                Deltd.appendChild(Delbtn)
+                trow.appendChild(Deltd)
+
+                document.querySelector("tbody").appendChild(trow)
+
+            });
+        }
+        function DelteNames(i) {
+            if (FilterMynames.length == 0) {
+                FilterMynames = Mynames.filter((user, index) => {
+                    return user.fname !== Mynames[i].fname;
+                });
+
+
+            } else {
+                FilterMynames = FilterMynames.filter((user, index) => {
+                    return user.fname !== FilterMynames[i].fname;
+                });
+
+
+            }
+
+            displayMynames(FilterMynames)
+        }
+        displayMynames(Mynames);
+        function edituser() {}
+
+        //LessColumns
+// var td1=document.createElement("td")
+// td1.innerHTML=user.fname
+// tabledt.appendChild(td1)
+// var td2=document.createElement("td")
+// td2.innerHTML=user.lname
+// tabledt.appendChild(td2)
+//
+// Using Object
+// document.querySelector("tbody").appendChild(trow)
+// Object.values(user).forEach((ball)=>{
+
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

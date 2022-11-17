@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Table 3</title>
+    <style>
+        table,tr,th,td {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>email</th>
+                <th>username</th>
+                <th>password</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        var allusers = [
+            {
+                "id": 1,
+                "email": "PImholtz@porta.ly",
+                "username": "JLazier",
+                "password": "Sxm0e"
+            },
+            {
+                "id": 2,
+                "email": "WKamdar@tellus.ly",
+                "username": "MFreund",
+                "password": "gZuU4"
+            },
+            {
+                "id": 3,
+                "email": "ABurton@tincidunt.gov",
+                "username": "BDykstra",
+                "password": "MbWwf"
+            },
+            {
+                "id": 4,
+                "email": "LTraverse@vestibulum.ly",
+                "username": "DMccarthy",
+                "password": "YPheY"
+            },
+            {
+                "id": 5,
+                "email": "BBondy@morbi.ly",
+                "username": "VMcmillan",
+                "password": "CGqja"
+            },
+            {
+                "id": 6,
+                "email": "SSuesskind@risus.io",
+                "username": "NSpellicy",
+                "password": "rHztq"
+            },
+            {
+                "id": 7,
+                "email": "RIbanez@vitae.com",
+                "username": "FLohr",
+                "password": "YQMJx"
+            },
+            {
+                "id": 8,
+                "email": "SJosey@porta.org",
+                "username": "LSchamber",
+                "password": "2PM3n"
+            },
+            {
+                "id": 9,
+                "email": "NKaiser@sit.gov",
+                "username": "STerrill",
+                "password": "xmxlk"
+            },
+            {
+                "id": 10,
+                "email": "JRansom@lacus.org",
+                "username": "CGriffith",
+                "password": "ZJiNH"
+            }
+        ]
+
+        var filterallusers = []
+        function displayallusers(allusers){
+            document.querySelector("tbody").innerHTML = ""
+        allusers.forEach((info, i) => {
+            var mytr = document.createElement("tr")
+
+            for (a in info) {
+                var mytd = document.createElement("td")
+                mytd.innerHTML = info[a]
+                mytr.appendChild(mytd)
+            }
+            var deltd = document.createElement("td")
+                var delbtn = document.createElement("button")
+                delbtn.setAttribute("onclick", "deleteinfo("+ i +")")
+                delbtn.innerHTML = "DELETE"
+                deltd.appendChild(delbtn)
+                mytr.appendChild(deltd)
+
+            document.querySelector("tbody").appendChild(mytr)
+        })
+    }
+
+    function deleteinfo(i){
+            if(filterallusers.length ==0){
+                filterallusers = allusers.filter((info, index)=>{
+                    return info.id !== allusers[i].id
+                })
+            }else {
+                filterallusers = filterallusers.filter((info, index)=>{
+                    return info.id !== filterallusers[i].id
+                })
+            }
+            displayallusers(filterallusers)
+        }
+        displayallusers(allusers)
+        function edituser(){}
+
+    </script>
+</body>
+
+</html>

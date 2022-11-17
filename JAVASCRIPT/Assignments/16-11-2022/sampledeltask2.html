@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Table 2</title>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>fname</th>
+                <th>lname</th>
+                <th>tel</th>
+                <th>address</th>
+                <th>city</th>
+                <th>state</th>
+                <th>zip</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        var allusers = [
+            {
+                "fname": "Rosemary",
+                "lname": "Key",
+                "tel": "(804)470-4476",
+                "address": "4874 Lectus Ln",
+                "city": "Eastvale",
+                "state": "MO",
+                "zip": 57117
+            },
+            {
+                "fname": "Zenaida",
+                "lname": "Girdner",
+                "tel": "(811)315-1121",
+                "address": "6134 Lectus Ct",
+                "city": "Arlington",
+                "state": "AK",
+                "zip": 66606
+            },
+            {
+                "fname": "Romeo",
+                "lname": "Matten",
+                "tel": "(996)972-8197",
+                "address": "6530 Pulvinar Ct",
+                "city": "Mooresville",
+                "state": "OH",
+                "zip": 24108
+            },
+            {
+                "fname": "Jasper",
+                "lname": "Hickey",
+                "tel": "(850)296-2427",
+                "address": "4257 Vitae Ln",
+                "city": "Pawtucket",
+                "state": "AR",
+                "zip": 73754
+            },
+            {
+                "fname": "Lori",
+                "lname": "Derkson",
+                "tel": "(330)687-4561",
+                "address": "7060 Egestas St",
+                "city": "Saint Ann",
+                "state": "NH",
+                "zip": 11302
+            },
+            {
+                "fname": "Kathleen",
+                "lname": "Liao",
+                "tel": "(880)002-9212",
+                "address": "7797 Donec Ln",
+                "city": "Glencoe",
+                "state": "IN",
+                "zip": 61570
+            },
+            {
+                "fname": "Polina",
+                "lname": "Jalowiecki",
+                "tel": "(662)569-4640",
+                "address": "7185 Sollicitudin Ct",
+                "city": "Clayton",
+                "state": "IA",
+                "zip": 33791
+            },
+            {
+                "fname": "Mosharraf",
+                "lname": "Moser",
+                "tel": "(430)009-3759",
+                "address": "3409 Elementum Dr",
+                "city": "North Barrington",
+                "state": "OH",
+                "zip": 28066
+            },
+            {
+                "fname": "Leovigildo",
+                "lname": "Bodily",
+                "tel": "(563)330-1605",
+                "address": "4248 Sollicitudin Ave",
+                "city": "Lancaster",
+                "state": "CT",
+                "zip": 15802
+            },
+            {
+                "fname": "Jeff",
+                "lname": "Bright",
+                "tel": "(587)282-4892",
+                "address": "415 Ipsum Dr",
+                "city": "Sacramento",
+                "state": "TN",
+                "zip": 46401
+            }
+        ]
+
+        var filterallusers = []
+        function displayallusers(allusers) {
+            document.querySelector("tbody").innerHTML = ""
+            allusers.forEach((info, i) => {
+                var mytr = document.createElement("tr")
+
+                for (a in info) {
+                    var mytd = document.createElement("td")
+                    mytd.innerHTML = info[a]
+                    mytr.appendChild(mytd)
+                }
+                var deltd = document.createElement("td")
+                var delbtn = document.createElement("button")
+                delbtn.setAttribute("onclick", "deleteinfo("+ i +")")
+                delbtn.innerHTML = "DELETE"
+                deltd.appendChild(delbtn)
+                mytr.appendChild(deltd)
+
+                document.querySelector("tbody").appendChild(mytr)
+            })
+        }
+        function deleteinfo(i){
+            if(filterallusers.length ==0){
+                filterallusers = allusers.filter((info, index)=>{
+                    return info.fname !== allusers[i].fname
+                })
+            }else {
+                filterallusers = filterallusers.filter((info, index)=>{
+                    return info.fname !== filterallusers[i].fname
+                })
+            }
+            displayallusers(filterallusers)
+        }
+        displayallusers(allusers)
+        function edituser(){}
+
+
+    </script>
+</body>
+
+</html>
