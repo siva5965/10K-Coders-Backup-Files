@@ -1,35 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Page 3</title>
     <style>
-        #container{
+        #container {
             display: inline-block;
             text-align: center;
         }
-        input,button{
+
+        input,
+        button {
             margin-top: 10px;
         }
     </style>
 </head>
+
 <body>
     <div id="container">
         <h1>HTML Form</h1>
-        <label for="">First Name : </label>
+        <label for="fname">First Name : </label>
         <input type="text" id="fname"><br>
-        <label for="">Last Name : </label>
+
+        <label for="lname">Last Name : </label>
         <input type="text" id="lname"><br>
-        <label for="">Date of Birth : </label>
-        <input type="date" id="Date of Birth"><br>
-        <label for="">Email id : </label>
-        <input type="email" id="Email"><br>
-        <label for="">Mobile Number : </label>
-        <input type="tel" id="Mobile Number"><br>
-        <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
+
+        <label for="doj">Date of Birth : </label>
+        <input type="date" id="doj"><br>
+
+        <label for="email">Email id : </label>
+        <input type="email" id="email"><br>
+
+        <label for="phone">Mobile Number : </label>
+        <input type="text" id="phone"><br>
+
+        <button type="button" onclick="getUser()">Get User</button>
+
     </div>
+
+    <script>
+        function getUser() {
+
+            var person = {
+                fname: "",
+                lname: "",
+                doj: "",
+                email: "",
+                phone: ""
+            }
+
+            for (a in person) {
+                person[a] = document.getElementById(a).value
+            }
+
+            //     var person = {
+            //         fname:document.getElementById("fname").value,
+            //         lname:document.getElementById("lname").value,
+            //         doj:document.getElementById("doj").value,
+            //         email:document.getElementById("email").value,
+            //         phone:document.getElementById("phone").value,
+
+            // }
+
+            console.log(person)
+        }
+
+    </script>
 </body>
+
 </html>

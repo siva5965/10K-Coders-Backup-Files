@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 4</title>
+    <style>
+        input,select{
+            /* margin-top: 10px; */
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="username">Username</label><br>
+        <input type="text" name="username" id="username"><br>
+        <label for="password">Password</label><br>
+        <input type="password" name="password" id="password"><br>
+        <label for="email">Email Address</label><br>
+        <input type="email" name="email" id="email"><br>
+        <label for="status"></label>
+        <select name="status" id="status">
+            <option value="I am a man">I am a man</option>
+            <option value="I am a woman">I am a woman</option>
+        </select><br>
+        <select name="find" id="find">
+            <option value="I want to find woman">I want to find woman</option>
+            <option value="I want to find man">I want to find man</option>
+        </select><br>
+        <label for="doj">Date of birth</label><br>
+        <input type="date" name="doj" id="doj"><br>
+        <label for="height">Height / </label>
+        <label for="weight">weight</label><br>
+        <input type="number" name="height" id="height" placeholder="Height">
+        <input type="number" name="weight" id="weight" placeholder="Weight"><br>
+        <button type="button" onclick="getUser()">get User</button>
+    </form>
+
+    <script>
+        var details = {
+            username:"",
+            password:"",
+            email:"",
+            status:"",
+            find:"",
+            doj:"",
+            height:"",
+            weight:""
+        }
+        function getUser(){
+            for(a in details){
+                details[a] = document.getElementById(a).value
+            }
+            console.log(details)
+        }
+
+    </script>
+</body>
+</html>

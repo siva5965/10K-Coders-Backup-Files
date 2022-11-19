@@ -5,53 +5,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Page 2</title>
     <style>
-        .container{
+        .container {
             display: inline-block;
             text-align: center;
             margin-left: 30%;
-            
+
         }
-        form{
+
+        form {
             height: 300px;
             background-color: rgb(191, 208, 228);
         }
-        
-        input{
+
+        input {
             margin-top: 10px;
 
         }
-        button{
+
+        button {
             margin-top: 10px;
         }
-       
     </style>
 </head>
 
 <body>
     <form class="container">
-        <h1 style="color: rgb(166, 98, 10);  text-align: left;">Address</h1><hr>
+        <h1 style="color: rgb(166, 98, 10);  text-align: left;">Address</h1>
+        <hr>
         <label for="street">Street : </label>
-        <input type="text"id="street"><br>
-        <input type="text" id="street" style="margin-left: 12%;"><br>
-        <label for="city">City : </label>
-        <input type="text" id="city" style="width: 30%;">
-        <label for="state">State</label>
-        <input type="text" id="state" style="width: 10%;"><br>
-        <label for="zipcode">Zipcode : </label>
-        <input type="number" id="zipcode"><br>
-        <label for="country">Country : </label>
-        <input type="text" id="country"><br>
-        <button type="button" onclick="getUser()">ok</button>
+        <input type="text" name="street" id="street"><br>
+        <input type="text" name="street" id="street" style="margin-left: 12%;"><br>
+        <label for="city">City , </label>
+        <label for="state">State : </label>
+        <input type="text" name="city" id="city" style="width: 30%;">
         
+        <input type="text" name="state" id="state" style="width: 10%;"><br>
+        <label for="zipcode">Zipcode : </label>
+        <input type="number" name="zipcode" id="zipcode"><br>
+        <label for="country">Country : </label>
+        <input type="text" name="country" id="country"><br>
+        <button type="button" onclick="getUser()" >OK</button>
+
     </form>
 
     <script>
 
-        var user = [
-            
-        ]
+        function getUser() {
+            var details = {
+                street: "",
+                city: "",
+                state: "",
+                zipcode: "",
+                country: ""
+
+            }
+
+
+            for (a in details) {
+
+                details[a] = document.getElementById(a).value
+            }
+
+            // var details = {
+            //     street:document.getElementById("street").value,
+            //     city:document.getElementById("city").value,
+            //     state:document.getElementById("state").value,
+            //     zipcode:document.getElementById("zipcode").value,
+            //     country:document.getElementById("country").value,
+
+            // }
+            console.log(details)
+        }
 
     </script>
 </body>
