@@ -10,7 +10,7 @@
         .container{
             display: inline-block;
             text-align: center;
-            margin-left: 40%;
+            margin-left: 30%;
             
         }
         form{
@@ -31,20 +31,29 @@
 
 <body>
     <form class="container">
-        <h1 style="color: burlywood;  text-align: left;">Address</h1><hr>
-        <label for="">Street : </label>
-        <input type="text"id="Street"><br>
-        <input type="text" id="Street" style="margin-left: 12%;"><br>
-        <label for="">City, State : </label>
-        <input type="text" id="City" style="width: 30%;">
-        <input type="text" id="State" style="width: 10%;"><br>
-        <label for="">Zipcode : </label>
-        <input type="text" id="Zipcode"><br>
-        <label for="">Country : </label>
-        <input type="text" id="Country"><br>
-        <button type="button">ok</button>
-        <button type="reset">cancel</button>
+        <h1 style="color: rgb(166, 98, 10);  text-align: left;">Address</h1><hr>
+        <label for="street">Street : </label>
+        <input type="text"id="street"><br>
+        <input type="text" id="street" style="margin-left: 12%;"><br>
+        <label for="city">City : </label>
+        <input type="text" id="city" style="width: 30%;">
+        <label for="state">State</label>
+        <input type="text" id="state" style="width: 10%;"><br>
+        <label for="zipcode">Zipcode : </label>
+        <input type="number" id="zipcode"><br>
+        <label for="country">Country : </label>
+        <input type="text" id="country"><br>
+        <button type="button" onclick="getUser()">ok</button>
+        
     </form>
+
+    <script>
+
+        var user = [
+            
+        ]
+
+    </script>
 </body>
 
 </html>

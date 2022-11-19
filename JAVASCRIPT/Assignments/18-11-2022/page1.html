@@ -19,7 +19,7 @@
         fieldset {
             width: 40%;
             margin: auto;
-            margin-top: 10%;
+            margin-top: 8%;
             text-align: center;
         }
 
@@ -29,7 +29,7 @@
 
         button {
             margin-top: 10%;
-        
+
         }
     </style>
 </head>
@@ -39,79 +39,104 @@
         <fieldset>
             <legend>Registration Details</legend>
 
-            <label for="University">University : </label>
-                <input type="text" id="University"><br>
-            
-            <label for="Institute">Institute : </label>
-                <input type="text" id="Institute"><br>
-            
-            <label for="Branch">Branch : </label>
-                <select name="Branch" id="Branch">
-                    <option>select</option>
-                    <option value="1">ECE</option>
-                    <option value="2">CSE</option>
-                    <option value="3">EEE</option>
-                    <option value="4">CIVIL</option>
-                    <option value="5">MECH</option>
-                </select><br>
-            
-            <label for="Degree">Degree : </label>
+            <label for="university">University : </label>
+            <input type="text" id="university"><br>
 
-                <select name="Degree" id="Deg">
-                    <option>select</option>
-                    <option value="1">B.TECH</option>
-                    <option value="2">M.TECH</option>
-                    <option value="3">MBA</option>
-                    <option value="4">B.COM</option>
-                    <option value="5">B.SC</option>
-                    <input type="radio" name="Degree" value="Pursuing">Pursuing
-                    <input type="radio" name="Degree" value="Completed">Completed
+            <label for="institute">Institute : </label>
+            <input type="text" id="institute"><br>
+
+            <label for="branch">Branch : </label>
+            <select name="Branch" id="branch">
+                <option>select</option>
+                <option value="ECE">ECE</option>
+                <option value="CSE">CSE</option>
+                <option value="EEE">EEE</option>
+                <option value="CIVIL">CIVIL</option>
+                <option value="MECH">MECH</option>
+            </select><br>
+
+            <label for="degree">Degree : </label>
+
+            <select name="Degree" id="degree">
+                <option>select</option>
+                <option value="B.TECH">B.TECH</option>
+                <option value="M.TECH">M.TECH</option>
+                <option value="MBA">MBA</option>
+                <option value="B.COM">B.COM</option>
+                <option value="B.SC">B.SC</option>
+            </select>
+            <br>
+            <label for="status">Status</label>
+            <input type="radio" name="status" value="Pursuing">Pursuing
+            <input type="radio" name="status" value="Completed">Completed <br>
 
 
-                </select>
-                <br>
-            
-            <label for="Avarage CPI">AvarageCPI : </label>
-                <input type="number" style="width: 40px;" id="AvarageCPI">Upto 
-                <input type="number" style="width: 40px;" id="AvarageCPI">Th Semester <br>
-            
-            <label for="Experience">Experience : </label>
-                <input type="number" style="width: 40px;" id="Experience">Years <br>
-            
-            <label for="Blog">Blog : </label>
-                <input type="text" id="Blog" value="http://"> <br>
-            
 
-            <button type="button" onclick="getUser()">getUser</button>
+
+            <label for="cgpa">CGPA : </label>
+            <input type="number" style="width: 40px;" id="cgpa">Upto
+            <input type="number" style="width: 40px;" id="cgpa">Th Semester <br>
+
+            <label for="experience">Experience : </label>
+            <input type="number" style="width: 40px;" id="experience">Years <br>
+
+            <label for="blog">Blog : </label>
+            <input type="text" id="blog" value="http://"> <br>
+
+            <label for="doj">Date of Joining</label>
+            <input type="date" name="" id="doj"> <br>
+
+            <label for="skill">Skills</label>
+            <input type="checkbox" name="skill" value="HTML">HTML <br>
+            <input type="checkbox" name="skill" value="CSS">CSS <br>
+            <input type="checkbox" name="skill" value="Javascript">Javascript <br>
+            <input type="checkbox" name="skill" value="ReactJS">ReactJS <br>
+
+
+            <button type="button" onclick="addUser()">Add User</button>
 
         </fieldset>
     </form>
     <script>
-        function getUser() {
-            var person = {
-                University: "",
-                Institute: "",
-                Branch: "",
-                Degree: "",
-                AvarageCPI: "",
-                Experience: "",
-                Blog: ""
-            };
-            for (a in person) {
 
-                if (a !== "Degree") {
-                    person[a] = document.getElementById(a).value
-                } else {
-                    var allradiobtns = document.getElementsByName("Degree")
-                    allradiobtns.forEach((element) => {
+        var user = {
+            university: "",
+            institute: "",
+            branch: "",
+            degree: "",
+            status: "",
+            cgpa: "",
+            experience: "",
+            blog: "",
+            doj: "",
+            skills:[]
+        }
+
+        function addUser() {
+            for (a in user) {
+
+                if (a !== "status" && a !== "skills") {
+                    user[a] = document.getElementById(a).value
+                } else if(a == "skills"){
+                    var allcheckboxes = document.getElementsByName("skill")
+                    allcheckboxes.forEach((element)=>{
+                        if (element.checked){
+                            user.skills.push(element.value)
+                        }
+                    });
+                }
+                
+                else if (a == "status" ){
+                    var allstatus = document.getElementsByName("status")
+                    allstatus.forEach((element) => {
                         if (element.checked) {
-                            person.Degree = element.value
-                            console.log(element.valve)
+                            user[a] = element.value
                         }
                     })
-                    console.log(allradiobtns)
+
                 }
             }
+            console.log(user)
         }
 
     </script>
