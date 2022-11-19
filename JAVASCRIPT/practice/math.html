@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math</title>
+</head>
+<body>
+    <script>
+        // var randomnumber = Math.random()*1000000
+        // console.log("random number : ",randomnumber)
+        // console.log("round number : ",Math.round(randomnumber))
+        // console.log("lowest number : ",Math.floor(randomnumber))
+        // console.log("highest number : ",Math.ceil(randomnumber))
+
+        
+        var randomnumbers = []
+        for (i=0;randomnumbers.length<10;i++){
+            var rnum = Math.round(Math.random()*1000000)
+            if(String(rnum).length ==6){
+                randomnumbers.push(rnum)
+            }
+        }
+
+
+        // let i=0
+        // while(i<10){
+        //     console.log(i)
+        //     i++
+
+        // }
+        // while(randomnumbers.length<=10){
+        //     var rnum = Math.round(Math.random()*1000000)
+        //     if(String(rnum).length ==6){
+        //         randomnumbers.push(rnum)
+        //     }
+        // }
+        console.log(randomnumbers)
+    </script>
+</body>
+</html>

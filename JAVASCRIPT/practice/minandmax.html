@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min and Max</title>
+</head>
+<body>
+    <script>
+        var randomnumbers = []
+        for (i=0;randomnumbers.length < 10;i++){
+            var rnum = Math.round(Math.random() * 1000000)
+            if(String(rnum).length == 6){
+                randomnumbers.push(rnum)
+            }
+        }
+        console.log(randomnumbers)
+        var minnumber = Math.min(...randomnumbers)
+        console.log(minnumber)
+    </script>
+</body>
+</html>

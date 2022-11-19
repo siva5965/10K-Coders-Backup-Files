@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page 1</title>
+    <style>
+        body {
+            background-color: rgb(53, 106, 160);
+        }
+
+        label {
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        fieldset {
+            width: 40%;
+            margin: auto;
+            margin-top: 10%;
+            text-align: center;
+        }
+
+        legend {
+            text-align: left;
+        }
+
+        button {
+            margin-top: 10%;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Registration Details</legend>
+
+            <label for="University">University : </label>
+                <input type="text" id="University"><br>
+            
+            <label for="Institute">Institute : </label>
+                <input type="text" id="Institute"><br>
+            
+            <label for="Branch">Branch : </label>
+                <select name="Branch" id="Branch">
+                    <option>select</option>
+                    <option value="1">ECE</option>
+                    <option value="2">CSE</option>
+                    <option value="3">EEE</option>
+                    <option value="4">CIVIL</option>
+                    <option value="5">MECH</option>
+                </select><br>
+            
+            <label for="Degree">Degree : </label>
+
+                <select name="Degree" id="Deg">
+                    <option>select</option>
+                    <option value="1">B.TECH</option>
+                    <option value="2">M.TECH</option>
+                    <option value="3">MBA</option>
+                    <option value="4">B.COM</option>
+                    <option value="5">B.SC</option>
+                    <input type="radio" name="Degree" value="Pursuing">Pursuing
+                    <input type="radio" name="Degree" value="Completed">Completed
+
+
+                </select>
+                <br>
+            
+            <label for="Avarage CPI">AvarageCPI : </label>
+                <input type="number" style="width: 40px;" id="AvarageCPI">Upto 
+                <input type="number" style="width: 40px;" id="AvarageCPI">Th Semester <br>
+            
+            <label for="Experience">Experience : </label>
+                <input type="number" style="width: 40px;" id="Experience">Years <br>
+            
+            <label for="Blog">Blog : </label>
+                <input type="text" id="Blog" value="http://"> <br>
+            
+
+            <button type="button" onclick="getUser()">getUser</button>
+
+        </fieldset>
+    </form>
+    <script>
+        function getUser() {
+            var person = {
+                University: "",
+                Institute: "",
+                Branch: "",
+                Degree: "",
+                AvarageCPI: "",
+                Experience: "",
+                Blog: ""
+            };
+            for (a in person) {
+
+                if (a !== "Degree") {
+                    person[a] = document.getElementById(a).value
+                } else {
+                    var allradiobtns = document.getElementsByName("Degree")
+                    allradiobtns.forEach((element) => {
+                        if (element.checked) {
+                            person.Degree = element.value
+                            console.log(element.valve)
+                        }
+                    })
+                    console.log(allradiobtns)
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
