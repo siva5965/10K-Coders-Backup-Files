@@ -1,81 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page1 EDIT and DELETE</title>
     <style>
-        
+        #formContent {
+            width: 20%;
+            float: left;
+        }
+
+        #userTable {
+            width: 80%;
+            float: left;
+        }
+
+        table {
+            width: 100%;
+        }
+        #updateUserBtn{
+            disa
+        }
     </style>
+
 </head>
 
 <body>
-    <div class="mydata left">
+    <div id="formContent">
         <form>
-            <fieldset>
-                <legend>Registration Details</legend>
+            <label for="university">University : </label>
+            <input type="text" name="" id="university"> <br>
 
-                <label for="university">University : </label>
-                <input type="text" id="university"><br>
+            <label for="institute">Institute : </label>
+            <input type="text" name="" id="institute"> <br>
 
-                <label for="institute">Institute : </label>
-                <input type="text" id="institute"><br>
+            <label for="branch">Branch</label>
+            <select name="" id="branch">
+                <option value="Civil">Civil</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="CS">CS</option>
+                <option value="Communication">Communication</option>
+                <option value="IT">IT</option>
+            </select>
 
-                <label for="branch">Branch : </label>
-                <select name="Branch" id="branch">
-                    <option>select</option>
-                    <option value="ECE">ECE</option>
-                    <option value="CSE">CSE</option>
-                    <option value="EEE">EEE</option>
-                    <option value="CIVIL">CIVIL</option>
-                    <option value="MECH">MECH</option>
-                </select><br>
+            <br>
+            <label for="degree">Degree </label>
+            <select name="" id="degree">
+                <option value="BE">BE</option>
+                <option value="BTech">BTech</option>
+                <option value="MTech">MTech</option>
+            </select>
+            <br>
+            <label for="staus">Status : </label>
+            <input type="radio" name="status" value="completed"> Completed
+            <input type="radio" name="status" value="pursuing"> Pursuing <br>
 
-                <label for="degree">Degree : </label>
+            <label for="cgpa">CGPA :</label>
+            <input type="number" name="" id="cgpa"> <br>
 
-                <select name="Degree" id="degree">
-                    <option>select</option>
-                    <option value="B.TECH">B.TECH</option>
-                    <option value="M.TECH">M.TECH</option>
-                    <option value="MBA">MBA</option>
-                    <option value="B.COM">B.COM</option>
-                    <option value="B.SC">B.SC</option>
-                </select>
-                <br>
-                <label for="status">Status</label>
-                <input type="radio" name="status" value="Pursuing">Pursuing
-                <input type="radio" name="status" value="Completed">Completed <br>
+            <label for="experience">Experience :</label>
+            <input type="number" name="" id="experience"> <br>
 
+            <label for="website">Website :</label>
+            <input type="text" name="" id="website"> <br>
 
+            <label for="doj">Date of Joining </label>
+            <input type="date" name="" id="doj"> <br>
 
+            <label for="subject">Subjects : </label> <br>
+            <input type="checkbox" name="subject" value="HTML"> HTML <br>
+            <input type="checkbox" name="subject" value="CSS"> CSS <br>
+            <input type="checkbox" name="subject" value="Javascript"> Javascript <br>
+            <input type="checkbox" name="subject" value="ReactJS"> ReactJS <br>
 
-                <label for="cgpa">CGPA : </label>
-                <input type="number" id="cgpa">Upto
-                <input type="number" id="cgpa">Th Semester <br>
+            <button type="button" onclick="addUser()" id="addUserBtn">Add User</button>
+            <button type="button" onclick="updateUser()" id="updateUserBtn">Update User</button>
 
-                <label for="experience">Experience : </label>
-                <input type="number" id="experience">Years <br>
-
-                <label for="blog">Blog : </label>
-                <input type="text" id="blog" value="http://"> <br>
-
-                <label for="doj">Date of Joining : </label>
-                <input type="date" name="" id="doj"> <br>
-
-                <label for="skill">Skills : </label>
-                <input type="checkbox" name="skill" value="HTML">HTML <br>
-                <input type="checkbox" name="skill" value="CSS">CSS <br>
-                <input type="checkbox" name="skill" value="Javascript">Javascript <br>
-                <input type="checkbox" name="skill" value="ReactJS">ReactJS <br>
-
-
-                <button type="button" onclick="addUser()">Add User</button>
-
-            </fieldset>
         </form>
+
     </div>
-    <div class="mydata right">
+    <div id="userTable">
         <table border="1">
             <thead>
                 <tr>
@@ -86,60 +93,22 @@
                     <th>Status</th>
                     <th>CGPA</th>
                     <th>Experience</th>
-                    <th>Blog</th>
-                    <th>Date of Joining</th>
-                    <th>Skills</th>
-                    <th>EDIT</th>
-                    <th>DELETE</th>
-
+                    <th>Website</th>
+                    <th>DOJ</th>
+                    <th>Subjects</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
+            <tbody></tbody>
         </table>
-
     </div>
-    <script>
 
-        var user = {
-            university: "",
-            institute: "",
-            branch: "",
-            degree: "",
-            status: "",
-            cgpa: "",
-            experience: "",
-            blog: "",
-            doj: "",
-            skills: []
-        }
+    <script src="./create.js"></script>
+    <script src="./read.js"></script>
+    <script src="./update.js"></script>
+    <script src="./delete.js"></script>
 
-        function addUser() {
-            for (a in user) {
-
-                if (a !== "status" && a !== "skills") {
-                    user[a] = document.getElementById(a).value
-                } else if (a == "skills") {
-                    var allcheckboxes = document.getElementsByName("skill")
-                    allcheckboxes.forEach((element) => {
-                        if (element.checked) {
-                            user.skills.push(element.value)
-                        }
-                    });
-                }
-
-                else if (a == "status") {
-                    var allstatus = document.getElementsByName("status")
-                    allstatus.forEach((element) => {
-                        if (element.checked) {
-                            user[a] = element.value
-                        }
-                    })
-
-                }
-            }
-            console.log(user)
-        }
-
-    </script>
 </body>
 
 </html>
