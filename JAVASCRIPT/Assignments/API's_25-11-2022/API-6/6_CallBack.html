@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>callback-6</title>
+</head>
+
+<body>
+    <button onclick="getData()">Get Data</button>
+
+    <script>
+        var data = [];
+        function getData() {
+            var getInfo = new XMLHttpRequest();
+            getInfo.onreadystatechange = function () {
+                if (getInfo.readyState == 4 && getInfo.status == 200) {
+                    data = JSON.parse(getInfo.response);
+                    console.log(data)
+
+
+                }
+            };
+            getInfo.open("GET", "https://car-api2.p.rapidapi.com/api/years");
+            getInfo.setRequestHeader(
+                "X-RapidAPI-Key",
+                "06d7a03758mshc325bc943411e3ap1c0a68jsnfa9a0f4e7414"
+            );
+            getInfo.setRequestHeader(
+                "X-RapidAPI-Host",
+                "car-api2.p.rapidapi.com"
+            );
+
+            getInfo.send();
+        }
+
+
+    </script>
+</body>
+
+</html>
