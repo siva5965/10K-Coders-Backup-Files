@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 250px;
+            height: 200px;
+        }
+        li{
+            list-style: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li> <img src="https://img.freepik.com/free-photo/indian-chicken-biryani-served-terracotta-bowl-with-yogurt-white-background-selective-focus_466689-72554.jpg?size=626&ext=jpg" alt=""> </li>
+        <li><img src="https://img.freepik.com/free-photo/top-view-food-frame-with-copy-space_23-2148723447.jpg?size=626&ext=jpg" alt=""> </li>
+        <li><img src="https://img.freepik.com/free-photo/aloo-paratha-gobi-paratha-also-known-as-potato-cauliflower-stuffed-flatbread-dish-originating-from-indian-subcontinent_466689-76173.jpg?size=626&ext=jpg" alt=""> </li>
+        <li><img src="https://img.freepik.com/free-photo/sambar-rice-sambar-sadam-one-pot-meal-from-south-indian-state-tamil-nadu-kerala_466689-75220.jpg?size=626&ext=jpg" alt=""> </li>
+        <li><img src="https://img.freepik.com/premium-photo/assorted-indian-recipes-food-various_79295-7226.jpg?size=626&ext=jpg" alt=""> </li>
+    </ul>
+
+    <script>
+        document.querySelector("ul").onclick=function(event){
+            var selectedElement = event.target.parentNode;
+            var parentElement = selectedElement.parentNode
+            console.log(selectedElement);
+            parentElement.removeChild(selectedElement)
+
+        }
+    </script>
+</body>
+</html>
