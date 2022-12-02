@@ -67,25 +67,12 @@
     {
       "id": 5,
       "name": "Chelsey Dietrich",
-      "username": "Kamren",
+      "username": "Kamren kakfuh",
       "email": "Lucio_Hettinger@annie.ca",
-      "address": {
-        "street": "Skiles Walks",
-        "suite": "Suite 351",
-        "city": "Roscoeview",
-        "zipcode": "33263",
-        "geo": {
-          "lat": "-31.8129",
-          "lng": "62.5342"
-        }
-      },
+      "address": {},
       "phone": "(254)954-1289",
       "website": "demarco.info",
-      "company": {
-        "name": "Keebler LLC",
-        "catchPhrase": "User-centric fault-tolerant solution",
-        "bs": "revolutionize end-to-end systems"
-      }
+      "company": {}
     },
     {
       "id": 6,
@@ -127,14 +114,6 @@
       "website": "jacynthe.com"
     },
     {
-      "id": 9,
-      "name": "Mrs. Dennis Schulist",
-      "username": "Maxime_Nienow",
-      "email": "Karley_Dach@jasper.info",
-      "phone": "+14779358478",
-      "website": "jacynthe.com"
-    },
-    {
       "id": 10,
       "name": "sivakalyan rayavarupu",
       "username": "siva5965",
@@ -148,7 +127,7 @@
       "username": "krish123",
       "email": "krish@gmail.com",
       "address": {},
-      "phone": "9876543210",
+      "phone": "123654889",
       "website": "www.krish.org",
       "company": {}
     }

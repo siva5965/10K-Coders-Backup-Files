@@ -1,0 +1,114 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fname": "Irmaa",
+      "lname": "Darling",
+      "tel": "(868)858-4613",
+      "address": "2246 Consequat Ave",
+      "city": "Alhambra",
+      "state": "ME",
+      "zip": 62064
+    },
+    {
+      "id": 2,
+      "fname": "Latonya",
+      "lname": "Smyth",
+      "tel": "(817)640-3237",
+      "address": "7742 Sollicitudin Ave",
+      "city": "Sebring",
+      "state": "IL",
+      "zip": 50370
+    },
+    {
+      "id": 3,
+      "fname": "Ozma",
+      "lname": "Clements",
+      "tel": "(426)020-9771",
+      "address": "8505 Lacus Ln",
+      "city": "Gaithersburg",
+      "state": "PA",
+      "zip": 76258
+    },
+    {
+      "id": 4,
+      "fname": "Jose",
+      "lname": "Linville",
+      "tel": "(157)289-9389",
+      "address": "4312 Massa Ct",
+      "city": "Ligonier",
+      "state": "SC",
+      "zip": 70004
+    },
+    {
+      "id": 5,
+      "fname": "Aesha",
+      "lname": "Kelliedugan",
+      "tel": "(251)678-3157",
+      "address": "3005 Fringilla Ln",
+      "city": "Hopatcong",
+      "state": "MS",
+      "zip": 56609
+    },
+    {
+      "id": 6,
+      "fname": "Enrique",
+      "lname": "Knapp",
+      "tel": "(385)494-0478",
+      "address": "3977 Ipsum Ave",
+      "city": "Moundridge",
+      "state": "SD",
+      "zip": 14087
+    },
+    {
+      "id": 7,
+      "fname": "Candis",
+      "lname": "Kamdar",
+      "tel": "(627)308-9631",
+      "address": "2489 Curabitur St",
+      "city": "Middleburg",
+      "state": "KS",
+      "zip": 18221
+    },
+    {
+      "id": 8,
+      "fname": "Theodora",
+      "lname": "Boomer",
+      "tel": "(935)794-6823",
+      "address": "173 Amet Ct",
+      "city": "Montreal",
+      "state": "MO",
+      "zip": 27718
+    },
+    {
+      "id": 9,
+      "fname": "Anthony",
+      "lname": "Camire",
+      "tel": "(545)941-4221",
+      "address": "2803 Vitae Ln",
+      "city": "Cincinnati",
+      "state": "IL",
+      "zip": 69081
+    },
+    {
+      "id": 10,
+      "fname": "Grace",
+      "lname": "Monyer",
+      "tel": "(422)138-1985",
+      "address": "4776 Tortor Ct",
+      "city": "Las Vegas",
+      "state": "NM",
+      "zip": 50439
+    },
+    {
+      "id": 11,
+      "fname": "Nicholas",
+      "lname": "Runolfsdottir",
+      "tel": "1984585696",
+      "address": "Near Old Cooperative Bank",
+      "city": "Korukonda",
+      "state": "Andhra Pradesh",
+      "zip": "533289"
+    }
+  ]
+}

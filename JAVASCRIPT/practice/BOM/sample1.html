@@ -51,7 +51,8 @@
     <script>
         var allusers = []
         function getdatafromserver() {
-            fetch("http://localhost:3000/users").then((response) => {
+            fetch("http://localhost:3000/users")
+            .then((response) => {
                 return response.json()
             }).then((users) => {
                 console.log(users)
