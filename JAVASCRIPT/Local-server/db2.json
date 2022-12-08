@@ -109,6 +109,16 @@
       "city": "Korukonda",
       "state": "Andhra Pradesh",
       "zip": "533289"
+    },
+    {
+      "id": 12,
+      "fname": "Nicholas",
+      "lname": "Runolfsdottir",
+      "tel": "1984585696",
+      "address": "Near Old Cooperative Bank",
+      "city": "Korukonda",
+      "state": "Andhra Pradesh",
+      "zip": "533289"
     }
   ]
 }

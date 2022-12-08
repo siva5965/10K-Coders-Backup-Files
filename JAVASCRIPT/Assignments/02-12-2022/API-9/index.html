@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API-4 index</title>
+    <title>API-9 index</title>
     <style>
         #btn {
             display: flex;
@@ -26,64 +26,55 @@
     <table class="table">
         <thead>
             <tr>
-                <th rowspan="2">Id</th>
-                <th rowspan="2">Title</th>
-                <th rowspan="2">Price</th>
-                <th rowspan="2">Description</th>
-                <th rowspan="2">Category</th>
-                <th rowspan="2">Image</th>
-                <th colspan="2" rowspan="1">Rating</th>
-                <th rowspan="2">EDIT</th>
-                <th rowspan="2">DELETE</th>
+                <th>Year</th>
+                <th>Id</th>
+                <th>HorsePower</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
             </tr>
-            <tr>
-                <th>rate</th>
-                <th>count</th>
-
-            </tr>
+            
         </thead>
         <tbody>
 
         </tbody>
     </table>
     <div id="btn">
-        <button type="button" class="btn btn-primary" href="create.html" onclick="gotocreateuser()">Create User</button>
+        <button type="button" class="btn btn-primary" href="create.html" onclick="gotocreateuser()">Create car</button>
     </div>
 
     <script>
         var allusers = []
         function getdatafromserver() {
-            fetch("http://localhost:3010/users")
+            fetch("http://localhost:3020/cars")
                 .then((response) => {
                     return response.json()
                 })
-                .then((users) => {
-                    console.log(users);
-                    allusers = users
-                    displayusers(users)
+                .then((cars) => {
+                    console.log(cars);
+                    allusers = cars
+                    displayusers(cars)
                 })
         }
 
-        function displayusers(users) {
-            users.forEach((user, i) => {
+        function displayusers(cars) {
+            cars.forEach((car, i) => {
                 var mytr = document.createElement("tr")
-                for (a in user) {
+                for (a in car) {
                     var mytd = document.createElement("td")
 
-                    if (a !== "image" && a !== "rating") {
-                        mytd.innerHTML = user[a]
+                    if (a !== "image") {
+                        mytd.innerHTML = car[a]
                         mytr.appendChild(mytd)
-                    } else if (a == "image") {
+                    } 
+                    else if (a == "image") {
                         var myimg = document.createElement("img")
-                        myimg.setAttribute("src", user[a])
+                        myimg.setAttribute("src", car[a])
                         mytd.appendChild(myimg)
                         mytr.appendChild(mytd)
-                    } else if (a == "rating") {
-                        for (b in user[a]) {
-                            var myntd = document.createElement("td")
-                            myntd.innerHTML = user[a][b]
-                            mytr.appendChild(myntd)
-                        }
                     }
                 }
 

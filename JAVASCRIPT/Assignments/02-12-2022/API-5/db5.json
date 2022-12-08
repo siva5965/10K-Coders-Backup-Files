@@ -1,0 +1,145 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userId": 1,
+      "date": "2020-03-02T00:00:02.000Z",
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 4
+        },
+        {
+          "productId": 2,
+          "quantity": 1
+        },
+        {
+          "productId": 3,
+          "quantity": 6
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "date": "2020-01-02T00:00:02.000Z",
+      "products": [
+        {
+          "productId": 2,
+          "quantity": 4
+        },
+        {
+          "productId": 1,
+          "quantity": 10
+        },
+        {
+          "productId": 5,
+          "quantity": 2
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "date": "2020-03-01T00:00:02.000Z",
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 2
+        },
+        {
+          "productId": 9,
+          "quantity": 1
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "date": "2020-01-01T00:00:02.000Z",
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 4
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "id": 5,
+      "userId": 3,
+      "date": "2020-03-01T00:00:02.000Z",
+      "products": [
+        {
+          "productId": 7,
+          "quantity": 1
+        },
+        {
+          "productId": 8,
+          "quantity": 1
+        }
+      ],
+      "__v": 0
+    },
+    {
+      "id": 6,
+      "userid": "",
+      "date": "",
+      "products": "",
+      "__v": "0"
+    },
+    {
+      "id": 7,
+      "userid": "2",
+      "date": "12343563",
+      "products": "12"
+    },
+    {
+      "id": 8,
+      "userid": "RQU999",
+      "date": "12343563",
+      "products": "sxnmnbgfvdcfgthy"
+    },
+    {
+      "id": 9,
+      "userid": "",
+      "date": "",
+      "products": "12"
+    },
+    {
+      "id": 10,
+      "userid": "2",
+      "date": "12343563",
+      "products": "12"
+    },
+    {
+      "id": 11,
+      "userid": "8",
+      "date": "12343563",
+      "products": "12"
+    },
+    {
+      "id": 12,
+      "userid": "10",
+      "date": "12343563",
+      "products": "sxnmnbgfvdcfgthy"
+    },
+    {
+      "id": 13,
+      "userid": "10",
+      "date": "10",
+      "products": "10",
+      "__v": "10"
+    },
+    {
+      "id": 14,
+      "userid": "10",
+      "date": "10",
+      "products": "10",
+      "__v": "10"
+    }
+  ]
+}
