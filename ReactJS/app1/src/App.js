@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import TenKClassComp from './Components/TenKClassComp';
+import TenKcoders from './Components/TenKcoders'
+import TenKFunctionalComp from './Components/TenKFunctionalComp';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>hello from $iva Kalyan</h1>
+      <h2>Hello from 10K Coders</h2>
+      <TenKcoders/>
+      <TenKFunctionalComp/>
+      <TenKClassComp/>
+      
     </div>
   );
 }
