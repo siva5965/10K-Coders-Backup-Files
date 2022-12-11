@@ -2,6 +2,7 @@ import './App.css';
 import TenKClassComp from './Components/TenKClassComp';
 import TenKcoders from './Components/TenKcoders'
 import TenKFunctionalComp from './Components/TenKFunctionalComp';
+import MainFunction, { ParentComponent, ChildComponent } from './Components/MultipleFunctonalCompoents'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <TenKcoders/>
       <TenKFunctionalComp/>
       <TenKClassComp/>
+      <MainFunction/>
       
     </div>
   );
