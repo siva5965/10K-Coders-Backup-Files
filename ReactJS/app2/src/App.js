@@ -1,11 +1,13 @@
 
 import './App.css';
-import { MainClassComp } from './Components/MainClassComp';
+// import { MainClassComp } from './Components/MainClassComp';
+import Students from './Components/Students';
 
 function App() {
   return (
     <div className="App">
-      <MainClassComp/>
+      {/* <MainClassComp/> */}
+      <Students/>
     </div>
   );
 }
