@@ -1,0 +1,24 @@
+body {
+    background-color: rgb(53, 106, 160);
+}
+
+label {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+fieldset {
+    width: 40%;
+    margin: auto;
+    margin-top: 8%;
+    text-align: center;
+}
+
+legend {
+    text-align: left;
+}
+
+button {
+    margin-top: 10%;
+
+}
