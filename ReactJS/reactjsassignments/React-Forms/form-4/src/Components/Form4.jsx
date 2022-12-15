@@ -27,7 +27,7 @@ export default class Form4 extends Component {
         this.setState({ details: newDetails })
     };
     addUser = () => {
-        console.log(this.state.details);
+        
         var newAllUsers = [...this.state.allUsers]
         newAllUsers.push(this.state.details)
         this.setState({ allUsers: newAllUsers })
