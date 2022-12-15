@@ -1,0 +1,24 @@
+.container {
+    display: inline-block;
+    text-align: center;
+    /* margin-left: 30%; */
+
+}
+
+form {
+    height: 300px;
+    background-color: rgb(191, 208, 228);
+}
+
+input {
+    margin-top: 10px;
+
+}
+
+button {
+    margin-top: 10px;
+}
+h1{
+    color: rgb(166, 98, 10);
+    /* text-align: left; */
+}

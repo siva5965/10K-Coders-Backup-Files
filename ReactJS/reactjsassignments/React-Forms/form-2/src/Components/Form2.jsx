@@ -58,7 +58,8 @@ export default class Form2 extends Component {
     render() {
         return (
             <div>
-                <form>
+                <form className="container">
+                    <h1>Address</h1>
                     <label htmlFor="">Street : </label>
                     <input type="text" name="street" value={this.state.address.street} onChange={(e) => { this.handleChange(e) }} /> <br />
                     

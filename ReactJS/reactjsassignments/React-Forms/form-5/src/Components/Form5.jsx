@@ -59,26 +59,50 @@ export default class Form5 extends Component {
     }
 
     render() {
+        const{
+            username,
+            password,
+            email,
+            gender,
+            prefer,
+            dob,
+            height,
+            weight     
+        } = this.state.details
         return (
             <div>
                 <form>
                     <label htmlFor="">User Name : </label>
-                    <input type="text" name="username" value={this.state.details.username} onChange={(e) => { this.handleChange(e) }} /> <br />
+                    <input type="text" name="username" value={username} onChange={(e) => { this.handleChange(e) }} /> <br />
                     <label htmlFor="">Password : </label>
-                    <input type="password" name="password" value={this.state.details.password} onChange={(e) => { this.handleChange(e) }} /> <br />
+                    <input type="password" name="password" value={password} onChange={(e) => { this.handleChange(e) }} /> <br />
                     <label htmlFor="">Email Address : </label>
-                    <input type="email" name="email" value={this.state.details.email} onChange={(e) => { this.handleChange(e) }} /> <br />
+                    <input type="email" name="email" value={email} onChange={(e) => { this.handleChange(e) }} /> <br />
                     
                     <label htmlFor="">Gender : </label>
-                    <input type="text" name="gender" value={this.state.details.gender} onChange={(e) => { this.handleChange(e) }} /> <br />
+                    <select name="gender" value={gender} onChange={(e) => { this.handleChange(e) }}>
+                        <option>select gender</option>
+                        <option value={"male"}>Male</option>
+                        <option value={"female"}>Female</option>
+                    </select> <br />
+                    {/* <input type="text" name="gender" value={gender} onChange={(e) => { this.handleChange(e) }} /> <br /> */}
+
+
                     <label htmlFor="">Prefer : </label>
-                    <input type="text" name="prefer" value={this.state.details.prefer} onChange={(e) => { this.handleChange(e) }} /> <br />
+                    <select name="prefer" value={prefer} onChange={(e) => { this.handleChange(e) }}>
+                        <option>select preference</option>
+                        <option value={"i want female"}>I want Female</option>
+                        <option value={"i want male"}>I want Male</option>
+                    </select> <br />
+                    {/* <input type="text" name="prefer" value={prefer} onChange={(e) => { this.handleChange(e) }} /> <br /> */}
+
+
                     <label htmlFor="">Date of Birth : </label>
-                    <input type="text" name="dob" value={this.state.details.dob} onChange={(e) => { this.handleChange(e) }} /> <br />
+                    <input type="date" name="dob" value={dob} onChange={(e) => { this.handleChange(e) }} required/> <br />
                     <label htmlFor="">Height : </label>
-                    <input type="tel" name="height" value={this.state.details.height} onChange={(e) => { this.handleChange(e) }} /> <br />
+                    <input type="tel" name="height" value={height} onChange={(e) => { this.handleChange(e) }} /> <br />
                     <label htmlFor="">Weight : </label>
-                    <input type="tel" name="weight" value={this.state.details.weight} onChange={(e) => { this.handleChange(e) }} /> <br />
+                    <input type="tel" name="weight" value={weight} onChange={(e) => { this.handleChange(e) }} /> <br />
                     {this.state.editIndex !== null ? <button type="button" onClick={this.updateUser} className="btn btn-primary">Update User</button> : <button type="button" onClick={this.addUser} className="btn btn-primary">Add User</button>}
 
                 </form>
