@@ -1,36 +1,33 @@
-import React, { Component } from 'react'
+import React from "react";
+class ComponentOne extends React.Component {
+  // Defining the componentWillUnmount method
+  componentWillUnmount() {
+    alert("The component is going to be unmounted");
+  }
 
-export default class ComponentOne extends Component {
-
-    componentWillUnmount() {
-        alert("The component is going to be unmounted")
-    }
-    render() {
-        return (
-            <div>
-
-            </div>
-        )
-    }
+  render() {
+    return <h1>Hello Geeks!</h1>;
+  }
 }
 
 class App extends React.Component {
-    state = { display: true }
-    delete = () => {
-        this.setState({ display: false })
+  state = { display: true };
+  delete = () => {
+    this.setState({ display: false });
+  };
+
+  render() {
+    let comp;
+    if (this.state.display) {
+      comp = <ComponentOne />;
     }
-
-    render() {
-        let comp;
-        if (this.state.display) {
-            comp = <ComponentOne />;
-        }
-        return (
-            <div>
-                {comp}
-                <button onClick={this.delete}>Delete the component</button>
-            </div>
-        )
-    };
-
+    return (
+      <div>
+        {comp}
+        <button onClick={this.delete}>Delete the component</button>
+      </div>
+    );
+  }
 }
+
+export default App;
