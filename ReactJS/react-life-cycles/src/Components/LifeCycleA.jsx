@@ -8,7 +8,7 @@ export default class LifeCycleA extends Component {
 
         this.state = {
             message: "Welcome to Life Cycles",
-            showImage:false
+            showImage:true,
 
         }
         console.log("LifeCycleA Constructor Triggered !")
@@ -27,16 +27,14 @@ export default class LifeCycleA extends Component {
                 <button onClick={this.changeMessage}>Get Values from Server</button>
                 <LifeCycleB msg={this.state.message} />
                 <button onClick={this.showHideImages}>Show/Hide</button>
-                {this.state.showImage && <ImageComponent show={this.state.showImage}/>}
+                {this.state.showImage && <ImageComponent/>}
             </div>
         )
     }
     componentDidMount() {
         console.log("LifeCycleA componentDidMount Triggered !")
     }
-    componentWillUnmount(){
-        console.log("This Component is going to be Removed from DOM");
-      }
+    
 }
 
 // Component Mounting Phase
@@ -48,3 +46,6 @@ export default class LifeCycleA extends Component {
     // 1. shouldComponentUpdate
     // 2. Render
     // 3. componentDidUpdate
+
+// Component Unmounting phase
+    // 1. componentWillUnmount
