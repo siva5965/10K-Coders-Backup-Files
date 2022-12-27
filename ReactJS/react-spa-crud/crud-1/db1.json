@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+        "id": 1,
+        "fname": "siva",
+        "lname": "kalyan",
+        "dob": "25-02-1998",
+        "email": "sivacoolkalyan@gmail.com",
+        "mobile": "7396699448"
+      }
+  ]
+}
