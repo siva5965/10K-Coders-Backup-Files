@@ -6,6 +6,7 @@ import Layout from './Components/Layout';
 import EditUser from './Components/EditUser';
 import DeleteUser from './Components/DeleteUser'
 import CreateUser from './Components/CreateUser';
+import NavBar from './Components/NavBar';
 
 function App() {
 
@@ -16,8 +17,10 @@ function App() {
     // </div>
 
     <BrowserRouter>
+    <NavBar/>
       <Routes>
         <Route path='/' element={<Layout />}>
+          <Route index element={<Users/>}/>
           <Route path='/edit' element={<EditUser/>}/>
           <Route path='/delete' element={<DeleteUser/>}/>
           <Route path='/create' element={<CreateUser/>}/>

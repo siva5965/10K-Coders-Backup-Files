@@ -23,7 +23,7 @@ const CreateUser = () => {
     setusers(newuser);
 
   }
-  const ClearForm=()=>{
+  const clearForm=()=>{
     setusers({
       id: "",
       fullname: "",
@@ -40,7 +40,7 @@ const CreateUser = () => {
       method:"POST",
       body:JSON.stringify(users),
       headers:{"Content-Type":"application/json"}
-    }).then(()=>{navigate("/")})
+    }).then(()=>{clearForm(), navigate("/")})
   }
   return (
     <div className="container">
