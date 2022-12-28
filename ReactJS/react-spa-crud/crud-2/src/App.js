@@ -21,8 +21,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Users/>}/>
-          <Route path='/edit' element={<EditUser/>}/>
-          <Route path='/delete' element={<DeleteUser/>}/>
+          <Route path='/edit/:id' element={<EditUser/>}/>
+          <Route path='/delete/:id' element={<DeleteUser/>}/>
           <Route path='/create' element={<CreateUser/>}/>
 
         </Route>

@@ -2,14 +2,19 @@
   "users": [
     {
       "id": 1,
-      "fname": "siva",
-      "lname": "kalyan",
-      "dob": "25-02-1998",
+      "fname": "sivakalyan",
+      "lname": "rayavarupu",
+      "dob": "1998-02-25",
       "email": "sivacoolkalyan@gmail.com",
-      "mobile": "7396699448"
+      "mobile": "958711495"
     },
     {
-      "id": 2
+      "id": 3,
+      "fname": "sample3",
+      "lname": "sample3",
+      "dob": "2000-02-25",
+      "email": "sample3@gmail.com",
+      "mobile": "1234567890"
     }
   ]
 }

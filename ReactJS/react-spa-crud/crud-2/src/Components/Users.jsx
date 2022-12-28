@@ -16,7 +16,7 @@ const Users = () => {
     };
     return (
         <div>
-            <table className="table">
+            <table className="table mt-3">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -30,7 +30,7 @@ const Users = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {users.map((myUser,i)=> <User usr={myUser} key={i}/>)}
+                    {users.map((myUser,i)=> <User user={myUser} key={i}/>)}
 
 
                 </tbody>

@@ -1,9 +1,39 @@
-import React from 'react'
+import React, { useReducer } from 'react'
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router'
 
 const DeleteUser = () => {
+  const [user,setUser]= useState({})
+  const navigate = useNavigate()
+  const params = useParams()
+  console.log(params);
+  useEffect(()=>{
+    fetch("http://localhost:3201/users/"+params.id).then((response)=>response.json()).then((data)=>{
+      console.log(data);
+      setUser(data)
+    })
+
+  },[])
+
+  const confirmDelete=()=>{
+    fetch("http://localhost:3201/users/"+params.id,{
+      method:"DELETE"
+    }).then(()=>{
+      navigate('/')
+    })
+  }
   return (
     <div>
-      <h2>welcome to delete user</h2>
+      <ul>
+        <li>{user.id}</li>
+        <li>{user.fname}</li>
+        <li>{user.lname}</li>
+        <li>{user.dob}</li>
+        <li>{user.email}</li>
+        <li>{user.mobile}</li>
+      </ul>
+      <button className='btn btn-danger' onClick={confirmDelete}>Confirm Delete</button>
     </div>
   )
 }
