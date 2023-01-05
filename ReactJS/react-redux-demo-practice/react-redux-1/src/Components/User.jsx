@@ -20,17 +20,18 @@ class User extends Component {
 }
 
 function mapStateToProps(state) {
-  return {
-    allUsers: state.users,
-  }
+    return {
+      allUsers: state.users,
+    }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    addUser: () => dispatch(addUserAction()),
-    deleteUser: (user) => dispatch(deleteUserAction(user))
-  }
+function mapDispatchToProps(dispatch){
+    return{
+        addUser :()=> dispatch(addUserAction()),
+        deleteUser: (user) => dispatch(deleteUserAction(user))
+    }
 }
-// console.log(connect(mapStateToProps))
-// export default User
-export default connect(mapStateToProps, mapDispatchToProps)(User)
+
+export default connect(mapStateToProps,mapDispatchToProps)(User)
+
+
