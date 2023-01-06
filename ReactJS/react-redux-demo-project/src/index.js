@@ -3,38 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {createStore} from 'redux'
 import {Provider} from 'react-redux'
-import { addUserAction } from './Components/Actions';
+import { store } from './store/mainStore';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
-const defaultState = {
-  users : ["Siva","Kalyan","Anil","Kumar"],
-  employees:[],
-  products:[],
-  books:[]
-}
 
 
-const reducer = (state= defaultState, action)=>{
-  switch (action.type) {
-    case "ADDUSER":
-      let newUsers = [...state.users]
-      newUsers.push(action.payload)
-      return{...state,users : newUsers}
-    case "DELETEUSER":
-      let updateUsers = state.users.filter((user)=>user !== action.payload)
-      return{...state,users : updateUsers}
-    default:
-      return state;
-  }
 
-}
-const store = createStore(reducer);
-console.log(store)
-store.dispatch(addUserAction())
+
+// store.dispatch(addUserAction())
 
 root.render(
   <React.StrictMode>
