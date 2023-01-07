@@ -37,5 +37,16 @@
       "experience": "1",
       "website": "www.sample.com"
     }
+  ],
+  "Address": [
+    {
+      "id": 1,
+      "street": "Near Old Cooperative Bank",
+      "empty": "d.no- 8-40,",
+      "city": "Korukonda",
+      "state": "Andhra Pradesh",
+      "zipcode": "533289",
+      "country": "India"
+    }
   ]
 }
